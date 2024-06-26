@@ -14,8 +14,8 @@ public class Level {
         this.floor = floor;
         parkingSpots = new ArrayList<>(numSpots);
         for (int i = 0; i < numSpots; i++) {
-            VehicleType type= i%4!=0 ? VehicleType.MOTORCYCLE : VehicleType.CAR;
-            parkingSpots.add(ParkingSpot.initParkingSpot(10000+133424*i*i,type));
+            VehicleType type= i%4!=3 ? VehicleType.MOTORCYCLE : VehicleType.CAR;
+            parkingSpots.add(new ParkingSpot(i*i,type));
         }
     }
 

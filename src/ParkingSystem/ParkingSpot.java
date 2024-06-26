@@ -8,18 +8,9 @@ public class ParkingSpot {
     private final VehicleType type;
     private Vehicle parkedVehicle;
 
-    private static ParkingSpot spot;
-
-    private ParkingSpot(int spotNumber, VehicleType type){
+    public ParkingSpot(int spotNumber, VehicleType type){
         this.spotNumber = spotNumber;
         this.type=type;
-    }
-
-    public static ParkingSpot initParkingSpot(int SNo,VehicleType type) {
-        if(spot==null){
-            spot=new ParkingSpot(SNo,type);
-        }
-        return spot;
     }
 
     public synchronized boolean isAvailable() {
